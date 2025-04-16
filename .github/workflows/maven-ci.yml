@@ -41,6 +41,7 @@ jobs:
 
       - name: 🔄 Copy Frontend to Spring Boot static
         run: |
+          mkdir -p ./backend/cbbshop/cbbshop/src/main/resources/static
           rm -rf ./backend/cbbshop/cbbshop/src/main/resources/static/*
           cp -r ./frontend/cbbshop/dist/* ./backend/cbbshop/cbbshop/src/main/resources/static/
 
