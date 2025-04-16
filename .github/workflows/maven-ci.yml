@@ -30,6 +30,6 @@ jobs:
             ${{ runner.os }}-m2
 
       - name: Build with Maven
-        working-directory: ./backend
+        working-directory: ./backend/cbbshop/cbbshop
         run: mvn clean install -B
 
