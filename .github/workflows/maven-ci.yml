@@ -34,7 +34,7 @@ jobs:
         run: ls -al
 
       - name: 🧱 Build Vue Frontend
-        working-directory: ./frontend
+        working-directory: ../frontend
         run: |
           npm install
           npm run build
