@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.cbbshop.mapper.UserMapper">
+    <resultMap id="userResultMap" type="com.example.cbbshop.model.User">
+        <result property="id" column="id"/>
+        <result property="username" column="username"/>
+        <result property="password" column="password"/>
+        <result property="contactNumber" column="contact_number"/>
+        <result property="preferredLocation" column="preferred_location"/>
+        <result property="resetQuestion" column="reset_question"/>
+        <result property="resetAnswer" column="reset_answer"/>
+        <result property="userType" column="user_type"/>
+    </resultMap>
+
+    <select id="selectUserByUsername" resultType="com.example.cbbshop.model.User">
+        SELECT id, username, password, contact_number, preferred_location, reset_question, reset_answer, user_type
+        FROM user
+        WHERE username = #{username}
+    </select>
+</mapper>

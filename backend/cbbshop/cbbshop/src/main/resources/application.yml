@@ -1,0 +1,39 @@
+server:
+  port: 8081 # 端口号
+spring:
+  datasource:
+    url: jdbc:sqlite:database\cbbshop.db
+    username: # 因为没有用户名和密码，所以这两个参数就没有值
+    password:
+    driver-class-name: org.sqlite.JDBC # sqlite驱动
+  # 启用文件上传
+  servlet:
+    multipart:
+      enabled: true
+  web:
+    resources:
+      static-locations: classpath:/static/, file:${user.dir}/cbbshop/cbbshop/static/images/
+logging:
+  level:
+    com.example.demo.mapper: debug
+
+upload:
+  dir: ./static/images
+
+
+
+
+
+
+
+# mybatis配置
+mybatis:
+  mapper-locations: classpath:mybatis/mapper/*Mapper.xml # 配置mapper.xml文件路径
+  type-aliases-package: com.example.model # 实体类包名
+  #用于mybatis在控制台打印sql日志
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#jwt:
+#  secret: cz4z+/+BftWJ5yZI+IPie6GnT6kfKHhDbAKH5VdcwUw=  # 替换为实际的安全密钥
+#  expiration: 86400  # Token有效期（单位：秒），根据需求设置
